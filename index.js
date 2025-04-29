@@ -37,7 +37,7 @@ console.log(`The odd numbers you gave are ${getOdds(numbers)}.`);
  * @returns {number} the length of the array
  */
 function getLength(numbers) {
-  // TODO
+ return numbers.length;
 }
 
 /**
@@ -45,7 +45,13 @@ function getLength(numbers) {
  * @returns {number} the sum of the numbers
  */
 function getSum(numbers) {
-  // TODO
+  let sum = 0;
+
+  for (let i = 0; i < numbers.length; i++) {
+    const currentNumber = numbers[i];
+    sum += currentNumber;
+  }
+  return sum;
 }
 
 /**
@@ -53,7 +59,13 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  // TODO
+  let mean = 0;
+
+  for (let i = 0; i < numbers.length; i++) {
+    const currentNumber = numbers[i] / numbers.length;
+    mean += currentNumber;
+  }
+  return mean;
 }
 
 /**
@@ -61,7 +73,7 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
-  // TODO
+  return Math.min(...numbers);
 }
 
 /**
@@ -69,7 +81,7 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
-  // TODO
+  return Math.max(...numbers);
 }
 
 /**
@@ -77,7 +89,9 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  // TODO
+  let min = Math.min(...numbers);
+  let max = Math.max(...numbers);
+  return max - min;
 }
 
 /**
@@ -85,7 +99,14 @@ function getRange(numbers) {
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
-  // TODO
+  let evens = [];
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      evens.push(numbers[i]);
+    }
+  }
+  return evens;
 }
 
 /**
@@ -93,5 +114,12 @@ function getEvens(numbers) {
  * @returns {number[]} the odd numbers in the array
  */
 function getOdds(numbers) {
-  // TODO
+  let odds = [];
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 !== 0) {
+      odds.push(numbers[i]);
+    }
+  }
+  return odds;
 }
